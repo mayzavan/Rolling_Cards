@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://v7fh3wysxhwc"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_itetj"]
+[ext_resource type="PackedScene" uid="uid://by3nxu4jv15yh" path="res://scenes/dice.tscn" id="2_pd5lx"]
+[ext_resource type="PackedScene" uid="uid://b1un2h28nypus" path="res://scenes/card.tscn" id="3_iu3af"]
+[ext_resource type="PackedScene" uid="uid://bpf0y55u1xgu0" path="res://scenes/heart.tscn" id="4_5ddrp"]
+[ext_resource type="FontFile" uid="uid://cxigc8aa71qmu" path="res://Art/Font/Kenney High.ttf" id="4_pa8pw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_itetj")
+dice_scene = ExtResource("2_pd5lx")
+card_scene = ExtResource("3_iu3af")
+heart_scene = ExtResource("4_5ddrp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.864281, 0.763233, 0.687534, 1)
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+offset_left = 321.0
+offset_top = 1.0
+offset_right = 702.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 86
+text = "Score: 1120"

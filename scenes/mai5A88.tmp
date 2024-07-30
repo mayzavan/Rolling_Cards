@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://v7fh3wysxhwc"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_itetj"]
+[ext_resource type="PackedScene" uid="uid://by3nxu4jv15yh" path="res://scenes/dice.tscn" id="2_pd5lx"]
+[ext_resource type="PackedScene" uid="uid://b1un2h28nypus" path="res://scenes/card.tscn" id="3_iu3af"]
+[ext_resource type="PackedScene" uid="uid://bpf0y55u1xgu0" path="res://scenes/heart.tscn" id="4_5ddrp"]
+[ext_resource type="FontFile" uid="uid://cxigc8aa71qmu" path="res://Art/Font/Kenney High.ttf" id="4_pa8pw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er3c3"]
+bg_color = Color(0.712556, 0.560615, 0.513626, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_itetj")
+dice_scene = ExtResource("2_pd5lx")
+card_scene = ExtResource("3_iu3af")
+heart_scene = ExtResource("4_5ddrp")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_er3c3")
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+offset_left = 492.0
+offset_top = 5.0
+offset_right = 873.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 85
+text = "Score: 1120"
+
+[node name="TimeLabel" type="Label" parent="."]
+visible = false
+offset_left = 199.94
+offset_top = 5.0
+offset_right = 368.94
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 85
+text = "Time:"

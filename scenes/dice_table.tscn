@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://mnq4pmmxtd7x"]
+
+[ext_resource type="Texture2D" uid="uid://c0iodpi1iqf00" path="res://Art/dices.png" id="1_5qt4r"]
+
+[node name="dice_table" type="Sprite2D"]
+texture = ExtResource("1_5qt4r")
+hframes = 6

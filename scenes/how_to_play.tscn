@@ -1,0 +1,437 @@
+[gd_scene load_steps=25 format=3 uid="uid://dttalanqexgkr"]
+
+[ext_resource type="Script" path="res://scripts/how_to_play.gd" id="1_a8ryw"]
+[ext_resource type="FontFile" uid="uid://cxigc8aa71qmu" path="res://Art/Font/Kenney High.ttf" id="2_53tyc"]
+[ext_resource type="Texture2D" uid="uid://b468lyieom85g" path="res://Art/Cards (medium)/dice_1.png" id="3_an2y4"]
+[ext_resource type="Texture2D" uid="uid://cb8a22ti404of" path="res://Art/Cards (medium)/dice_2.png" id="4_6h7rr"]
+[ext_resource type="Texture2D" uid="uid://bbsypkmxaa4si" path="res://Art/Cards (medium)/dice_4.png" id="4_r5r3i"]
+[ext_resource type="Texture2D" uid="uid://cm01vtpr4sx6w" path="res://Art/Cards (medium)/dice_3.png" id="5_sgc1g"]
+[ext_resource type="Texture2D" uid="uid://0cdhtetrgnoe" path="res://Art/Cards (medium)/color_green_1.png" id="9_savvt"]
+[ext_resource type="Texture2D" uid="uid://6k6udg484mhc" path="res://Art/Cards (medium)/color_green_7.png" id="10_ix6dd"]
+[ext_resource type="Texture2D" uid="uid://chvsgci0omc7a" path="res://Art/Cards (medium)/dice_6.png" id="11_iev5t"]
+[ext_resource type="Texture2D" uid="uid://76wg3m63rdgu" path="res://Art/Cards (medium)/color_green_2.png" id="11_nnlka"]
+[ext_resource type="Texture2D" uid="uid://c7bb3ax8scsmw" path="res://Art/Cards (medium)/dice_5.png" id="12_ajh8x"]
+[ext_resource type="Texture2D" uid="uid://bvcpld32mt16u" path="res://Art/Cards (medium)/color_green_3.png" id="12_xsxg4"]
+[ext_resource type="Texture2D" uid="uid://c3eoej0l5fp7r" path="res://Art/Cards (medium)/color_green_4.png" id="13_7mlcu"]
+[ext_resource type="Texture2D" uid="uid://nsefp5j3wovq" path="res://Art/Cards (medium)/color_green_6.png" id="14_3edja"]
+[ext_resource type="Texture2D" uid="uid://cv1qy84w8iop4" path="res://Art/Cards (medium)/color_green_5.png" id="15_8ju86"]
+[ext_resource type="Texture2D" uid="uid://dr2ey6aanpphk" path="res://Art/Cards (medium)/color_green_0.png" id="33_fwgfk"]
+[ext_resource type="Texture2D" uid="uid://c7h3chsgs05sg" path="res://Art/Cards (medium)/color_green_8.png" id="36_svf2j"]
+[ext_resource type="Texture2D" uid="uid://bepnweia6il2g" path="res://Art/Cards (medium)/color_draw.png" id="37_20yvj"]
+[ext_resource type="Texture2D" uid="uid://qbaedu852v1g" path="res://Art/Cards (medium)/color_green_draw.png" id="38_4lqbb"]
+[ext_resource type="Texture2D" uid="uid://c3166o1rk0iql" path="res://Art/Cards (medium)/color_green_empty.png" id="39_vpa48"]
+[ext_resource type="Texture2D" uid="uid://8eug4j1ihohg" path="res://Art/Cards (medium)/color_green_skip.png" id="40_en8wc"]
+[ext_resource type="Texture2D" uid="uid://bsbs5ev8cntos" path="res://Art/Cards (medium)/color_wild.png" id="45_se2js"]
+[ext_resource type="Texture2D" uid="uid://dqd7p85ygewmi" path="res://Art/heart.png" id="46_wtmht"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyxt6"]
+bg_color = Color(0.766658, 0.525384, 0.544515, 1)
+
+[node name="How_to_play" type="Node2D"]
+script = ExtResource("1_a8ryw")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fyxt6")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 320.0
+offset_top = 464.0
+offset_right = 643.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 56
+text = "Back to main menu"
+
+[node name="Good" type="CanvasGroup" parent="."]
+position = Vector2(-28.755, 0)
+
+[node name="Dice1" type="Sprite2D" parent="Good"]
+position = Vector2(108.755, 72)
+scale = Vector2(2, 2)
+texture = ExtResource("3_an2y4")
+
+[node name="Dice10" type="Sprite2D" parent="Good"]
+position = Vector2(252.755, 416)
+scale = Vector2(2, 2)
+texture = ExtResource("3_an2y4")
+
+[node name="Dice9" type="Sprite2D" parent="Good"]
+position = Vector2(252.755, 368)
+scale = Vector2(2, 2)
+texture = ExtResource("3_an2y4")
+
+[node name="Dice2" type="Sprite2D" parent="Good"]
+position = Vector2(108.755, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("4_6h7rr")
+
+[node name="Dice7" type="Sprite2D" parent="Good"]
+position = Vector2(252.755, 224)
+scale = Vector2(2, 2)
+texture = ExtResource("4_6h7rr")
+
+[node name="Dice3" type="Sprite2D" parent="Good"]
+position = Vector2(108.755, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("5_sgc1g")
+
+[node name="Dice4" type="Sprite2D" parent="Good"]
+position = Vector2(108.755, 288)
+scale = Vector2(2, 2)
+texture = ExtResource("4_r5r3i")
+
+[node name="Dice5" type="Sprite2D" parent="Good"]
+position = Vector2(108.755, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ajh8x")
+
+[node name="Dice6" type="Sprite2D" parent="Good"]
+position = Vector2(108.755, 432)
+scale = Vector2(2, 2)
+texture = ExtResource("11_iev5t")
+
+[node name="Dice8" type="Sprite2D" parent="Good"]
+position = Vector2(252.755, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("11_iev5t")
+
+[node name="ColorGreen1" type="Sprite2D" parent="Good"]
+position = Vector2(164.755, 72)
+scale = Vector2(2, 2)
+texture = ExtResource("9_savvt")
+
+[node name="ColorGreen3" type="Sprite2D" parent="Good"]
+position = Vector2(387.175, 392)
+scale = Vector2(2, 2)
+texture = ExtResource("9_savvt")
+
+[node name="ColorGreen2" type="Sprite2D" parent="Good"]
+position = Vector2(387.175, 112)
+scale = Vector2(2, 2)
+texture = ExtResource("9_savvt")
+
+[node name="ColorGreen4" type="Sprite2D" parent="Good"]
+position = Vector2(164.755, 288)
+scale = Vector2(2, 2)
+texture = ExtResource("13_7mlcu")
+
+[node name="Label" type="Label" parent="Good"]
+offset_left = 115.175
+offset_right = 465.175
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "+20 for (each selected card)"
+
+[node name="ColorGreen9" type="Sprite2D" parent="Good"]
+position = Vector2(307.09, 248)
+scale = Vector2(2, 2)
+texture = ExtResource("36_svf2j")
+
+[node name="Dice11" type="Sprite2D" parent="Good"]
+position = Vector2(252.755, 88)
+scale = Vector2(2, 2)
+texture = ExtResource("3_an2y4")
+
+[node name="Dice12" type="Sprite2D" parent="Good"]
+position = Vector2(252.755, 136)
+scale = Vector2(2, 2)
+texture = ExtResource("11_iev5t")
+
+[node name="Bad" type="CanvasGroup" parent="."]
+position = Vector2(188.85, 0)
+
+[node name="Dice1" type="Sprite2D" parent="Bad"]
+position = Vector2(595.15, 72)
+scale = Vector2(2, 2)
+texture = ExtResource("3_an2y4")
+
+[node name="Dice2" type="Sprite2D" parent="Bad"]
+position = Vector2(595.15, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("4_6h7rr")
+
+[node name="Dice3" type="Sprite2D" parent="Bad"]
+position = Vector2(595.15, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("5_sgc1g")
+
+[node name="Dice4" type="Sprite2D" parent="Bad"]
+position = Vector2(595.15, 288)
+scale = Vector2(2, 2)
+texture = ExtResource("4_r5r3i")
+
+[node name="Dice5" type="Sprite2D" parent="Bad"]
+position = Vector2(595.15, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ajh8x")
+
+[node name="Dice6" type="Sprite2D" parent="Bad"]
+position = Vector2(595.15, 432)
+scale = Vector2(2, 2)
+texture = ExtResource("11_iev5t")
+
+[node name="ColorGreen2" type="Sprite2D" parent="Bad"]
+position = Vector2(648.115, 432)
+scale = Vector2(2, 2)
+texture = ExtResource("11_nnlka")
+
+[node name="ColorGreen3" type="Sprite2D" parent="Bad"]
+position = Vector2(648.115, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("12_xsxg4")
+
+[node name="ColorGreen4" type="Sprite2D" parent="Bad"]
+position = Vector2(697.335, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("13_7mlcu")
+
+[node name="Label" type="Label" parent="Bad"]
+offset_left = 640.115
+offset_right = 685.115
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "-40"
+
+[node name="ColorGreen0" type="Sprite2D" parent="Bad"]
+position = Vector2(648.115, 72)
+scale = Vector2(2, 2)
+texture = ExtResource("33_fwgfk")
+
+[node name="Special" type="CanvasGroup" parent="."]
+position = Vector2(1.685, 0)
+
+[node name="ColorDraw" type="Sprite2D" parent="Special"]
+position = Vector2(574.315, 296)
+scale = Vector2(2, 2)
+texture = ExtResource("37_20yvj")
+
+[node name="ColorGreenDraw" type="Sprite2D" parent="Special"]
+position = Vector2(574.315, 152)
+scale = Vector2(2, 2)
+texture = ExtResource("38_4lqbb")
+
+[node name="ColorGreenEmpty" type="Sprite2D" parent="Special"]
+position = Vector2(576, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("39_vpa48")
+
+[node name="ColorGreenSkip" type="Sprite2D" parent="Special"]
+position = Vector2(574.315, 224)
+scale = Vector2(2, 2)
+texture = ExtResource("40_en8wc")
+
+[node name="ColorWild" type="Sprite2D" parent="Special"]
+position = Vector2(574.315, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("45_se2js")
+
+[node name="Label2" type="Label" parent="Special"]
+offset_left = 616.0
+offset_top = 64.0
+offset_right = 661.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "+30"
+
+[node name="Label4" type="Label" parent="Special"]
+offset_left = 614.315
+offset_top = 128.0
+offset_right = 674.315
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "+200"
+
+[node name="Label6" type="Label" parent="Special"]
+offset_left = 614.315
+offset_top = 272.0
+offset_right = 674.315
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "+400"
+
+[node name="Label7" type="Label" parent="Special"]
+offset_left = 614.315
+offset_top = 336.0
+offset_right = 674.315
+offset_bottom = 373.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "*2"
+
+[node name="Label8" type="Label" parent="Special"]
+offset_left = 300.735
+offset_top = 376.0
+offset_right = 360.735
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "or"
+
+[node name="Label9" type="Label" parent="Special"]
+offset_left = 300.735
+offset_top = 232.0
+offset_right = 360.735
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "or"
+
+[node name="Label12" type="Label" parent="Special"]
+offset_left = 380.735
+offset_top = 232.0
+offset_right = 440.735
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "or"
+
+[node name="Label10" type="Label" parent="Special"]
+offset_left = 300.735
+offset_top = 96.0
+offset_right = 360.735
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "or"
+
+[node name="Label11" type="Label" parent="Special"]
+offset_left = 380.735
+offset_top = 96.0
+offset_right = 440.735
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "or"
+
+[node name="Heart" type="Sprite2D" parent="Special"]
+position = Vector2(662.315, 217.56)
+scale = Vector2(6.96, 7.48)
+texture = ExtResource("46_wtmht")
+
+[node name="Label5" type="Label" parent="Special"]
+offset_left = 614.315
+offset_top = 200.0
+offset_right = 630.315
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("2_53tyc")
+theme_override_font_sizes/font_size = 41
+text = "-"
+
+[node name="ColorGreen2" type="Sprite2D" parent="."]
+position = Vector2(134.42, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("11_nnlka")
+
+[node name="ColorGreen15" type="Sprite2D" parent="."]
+position = Vector2(438.42, 248)
+scale = Vector2(2, 2)
+texture = ExtResource("11_nnlka")
+
+[node name="ColorGreen3" type="Sprite2D" parent="."]
+position = Vector2(134.42, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("12_xsxg4")
+
+[node name="ColorGreen5" type="Sprite2D" parent="."]
+position = Vector2(134.42, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("15_8ju86")
+
+[node name="ColorGreen6" type="Sprite2D" parent="."]
+position = Vector2(134.42, 432)
+scale = Vector2(2, 2)
+texture = ExtResource("14_3edja")
+
+[node name="ColorGreen16" type="Sprite2D" parent="."]
+position = Vector2(438.42, 112)
+scale = Vector2(2, 2)
+texture = ExtResource("14_3edja")
+
+[node name="ColorGreen14" type="Sprite2D" parent="."]
+position = Vector2(358.42, 248)
+scale = Vector2(2, 2)
+texture = ExtResource("14_3edja")
+
+[node name="ColorGreen4" type="Sprite2D" parent="."]
+position = Vector2(278.42, 392)
+scale = Vector2(2, 2)
+texture = ExtResource("11_nnlka")
+
+[node name="ColorGreen7" type="Sprite2D" parent="."]
+position = Vector2(278.42, 112)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ix6dd")
+
+[node name="ColorGreen8" type="Sprite2D" parent="."]
+position = Vector2(886.185, 72)
+scale = Vector2(2, 2)
+texture = ExtResource("14_3edja")
+
+[node name="ColorGreen9" type="Sprite2D" parent="."]
+position = Vector2(838.185, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("13_7mlcu")
+
+[node name="ColorGreen10" type="Sprite2D" parent="."]
+position = Vector2(886.185, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("12_xsxg4")
+
+[node name="ColorGreen11" type="Sprite2D" parent="."]
+position = Vector2(838.185, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("15_8ju86")
+
+[node name="ColorGreen12" type="Sprite2D" parent="."]
+position = Vector2(838.185, 288)
+scale = Vector2(2, 2)
+texture = ExtResource("14_3edja")
+
+[node name="ColorGreen0" type="Sprite2D" parent="."]
+position = Vector2(886.185, 288)
+scale = Vector2(2, 2)
+texture = ExtResource("33_fwgfk")
+
+[node name="ColorGreen1" type="Sprite2D" parent="."]
+position = Vector2(886.185, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("9_savvt")
+
+[node name="ColorGreen13" type="Sprite2D" parent="."]
+position = Vector2(886.185, 432)
+scale = Vector2(2, 2)
+texture = ExtResource("13_7mlcu")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

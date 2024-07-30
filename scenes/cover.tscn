@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0j5cbrrkna7y"]
+
+[ext_resource type="Texture2D" uid="uid://dqd7p85ygewmi" path="res://Art/heart.png" id="1_e8bmw"]
+[ext_resource type="FontFile" uid="uid://cxigc8aa71qmu" path="res://Art/Font/Kenney High.ttf" id="1_pmhn5"]
+[ext_resource type="Texture2D" uid="uid://cduf2i4a1gh7d" path="res://Art/cards.png" id="1_wa6am"]
+[ext_resource type="Texture2D" uid="uid://bq7jsbyfhotvc" path="res://Art/RmMD+7.png" id="2_xlo5x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oku5f"]
+bg_color = Color(0.764706, 0.52549, 0.545098, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 630.0
+offset_bottom = 500.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oku5f")
+
+[node name="Cards" type="Sprite2D" parent="."]
+position = Vector2(312, 88)
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("1_wa6am")
+
+[node name="Cards2" type="Sprite2D" parent="."]
+position = Vector2(312, 416)
+rotation = 3.14159
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("1_wa6am")
+
+[node name="Cards3" type="Sprite2D" parent="."]
+position = Vector2(312, 288)
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("1_wa6am")
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(315.86, 248)
+scale = Vector2(79.035, 82.6667)
+texture = ExtResource("1_e8bmw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 85.0
+offset_top = 88.0
+offset_right = 557.0
+offset_bottom = 393.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("1_pmhn5")
+theme_override_font_sizes/font_size = 171
+text = "rolling cards"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(160, 56)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("2_xlo5x")

@@ -1,0 +1,359 @@
+[gd_scene load_steps=14 format=3 uid="uid://v7fh3wysxhwc"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_itetj"]
+[ext_resource type="PackedScene" uid="uid://by3nxu4jv15yh" path="res://scenes/dice.tscn" id="2_pd5lx"]
+[ext_resource type="PackedScene" uid="uid://b1un2h28nypus" path="res://scenes/card.tscn" id="3_iu3af"]
+[ext_resource type="PackedScene" uid="uid://bpf0y55u1xgu0" path="res://scenes/heart.tscn" id="4_5ddrp"]
+[ext_resource type="FontFile" uid="uid://cxigc8aa71qmu" path="res://Art/Font/Kenney High.ttf" id="4_pa8pw"]
+[ext_resource type="PackedScene" uid="uid://mnq4pmmxtd7x" path="res://scenes/dice_table.tscn" id="5_5qfuk"]
+[ext_resource type="PackedScene" uid="uid://doto70kqn8afg" path="res://scenes/card_table.tscn" id="6_ad2lc"]
+[ext_resource type="Texture2D" uid="uid://cduf2i4a1gh7d" path="res://Art/cards.png" id="8_h4fhv"]
+[ext_resource type="AudioStream" uid="uid://1eqcxwwh53q2" path="res://sfx/dice_throw.wav" id="9_5trbl"]
+[ext_resource type="AudioStream" uid="uid://uu5hykdvbnxf" path="res://sfx/putting_board.wav" id="10_1r448"]
+[ext_resource type="AudioStream" uid="uid://cw85ix1l5nnx5" path="res://sfx/timer.wav" id="11_b47ce"]
+[ext_resource type="Texture2D" uid="uid://bq7jsbyfhotvc" path="res://Art/RmMD+7.png" id="12_107s1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er3c3"]
+bg_color = Color(0.766658, 0.525384, 0.544515, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_itetj")
+dice_scene = ExtResource("2_pd5lx")
+card_scene = ExtResource("3_iu3af")
+heart_scene = ExtResource("4_5ddrp")
+dice_table_scene = ExtResource("5_5qfuk")
+card_table_scene = ExtResource("6_ad2lc")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_er3c3")
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+offset_left = 492.0
+offset_top = 5.0
+offset_right = 873.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 85
+text = "
+"
+
+[node name="TimeLabel" type="Label" parent="."]
+visible = false
+offset_left = 199.94
+offset_top = 5.0
+offset_right = 368.94
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 85
+
+[node name="ENDUI" type="CanvasGroup" parent="."]
+visible = false
+top_level = true
+
+[node name="Panel" type="Panel" parent="ENDUI"]
+offset_right = 692.0
+offset_bottom = 540.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_er3c3")
+
+[node name="Panel2" type="Panel" parent="ENDUI"]
+offset_right = 960.0
+offset_bottom = 72.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_er3c3")
+
+[node name="Label" type="Label" parent="ENDUI"]
+offset_left = 35.0
+offset_top = 32.0
+offset_right = 636.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 140
+text = "Game finished"
+
+[node name="heartlabel" type="Label" parent="ENDUI"]
+offset_left = 36.0
+offset_top = 157.84
+offset_right = 382.0
+offset_bottom = 210.84
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 60
+
+[node name="pointlabel" type="Label" parent="ENDUI"]
+offset_left = 35.0
+offset_top = 280.09
+offset_right = 427.0
+offset_bottom = 333.09
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 60
+
+[node name="Label5" type="Label" parent="ENDUI"]
+offset_left = 32.0
+offset_top = 438.0
+offset_right = 662.0
+offset_bottom = 491.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 50
+text = "Please share this screen in comments :)"
+
+[node name="Label3" type="Label" parent="ENDUI"]
+offset_left = 192.0
+offset_top = 216.0
+offset_right = 218.0
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 60
+text = "&"
+
+[node name="norml" type="Label" parent="ENDUI"]
+offset_left = 472.0
+offset_top = 158.0
+offset_right = 600.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 35
+
+[node name="bll" type="Label" parent="ENDUI"]
+offset_left = 472.0
+offset_top = 238.0
+offset_right = 600.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 35
+
+[node name="emptl" type="Label" parent="ENDUI"]
+offset_left = 472.0
+offset_top = 278.0
+offset_right = 600.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 35
+
+[node name="2l" type="Label" parent="ENDUI"]
+offset_left = 472.0
+offset_top = 318.0
+offset_right = 600.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 35
+
+[node name="4l" type="Label" parent="ENDUI"]
+offset_left = 472.0
+offset_top = 358.0
+offset_right = 600.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 35
+
+[node name="jokersl" type="Label" parent="ENDUI"]
+offset_left = 472.0
+offset_top = 398.0
+offset_right = 600.0
+offset_bottom = 430.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 35
+
+[node name="Sprite2D2" type="Sprite2D" parent="ENDUI"]
+modulate = Color(0.542577, 1, 0.491065, 1)
+position = Vector2(456, 174)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+vframes = 4
+frame = 16
+
+[node name="badnorml" type="Label" parent="ENDUI"]
+offset_left = 472.0
+offset_top = 198.0
+offset_right = 600.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.737255, 0.215686, 0.301961, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 35
+
+[node name="Sprite2D7" type="Sprite2D" parent="ENDUI"]
+modulate = Color(1, 0.452134, 0.386351, 1)
+position = Vector2(456, 214)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+vframes = 4
+frame = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="ENDUI"]
+position = Vector2(456, 254)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+vframes = 4
+frame = 18
+
+[node name="Sprite2D3" type="Sprite2D" parent="ENDUI"]
+position = Vector2(456, 334)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+vframes = 4
+frame = 19
+
+[node name="Sprite2D4" type="Sprite2D" parent="ENDUI"]
+position = Vector2(456, 294)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+vframes = 4
+frame = 20
+
+[node name="Sprite2D5" type="Sprite2D" parent="ENDUI"]
+position = Vector2(456, 374)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+vframes = 4
+frame = 27
+
+[node name="Sprite2D6" type="Sprite2D" parent="ENDUI"]
+position = Vector2(456, 414)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+vframes = 4
+frame = 29
+
+[node name="playagain" type="Button" parent="ENDUI"]
+offset_left = 80.0
+offset_top = 350.0
+offset_right = 360.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 71
+text = "main menu"
+
+[node name="dice_throwSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_5trbl")
+
+[node name="putting_boardSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1r448")
+volume_db = -5.0
+
+[node name="timerSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_b47ce")
+volume_db = -15.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MainMenuUI" type="CanvasGroup" parent="."]
+
+[node name="Panel2" type="Panel" parent="MainMenuUI"]
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_er3c3")
+
+[node name="Label" type="Label" parent="MainMenuUI"]
+offset_left = 48.0
+offset_top = -24.0
+offset_right = 923.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 201
+text = "rolling cards"
+
+[node name="Label2" type="Label" parent="MainMenuUI"]
+offset_left = 48.0
+offset_top = 400.0
+offset_right = 923.0
+offset_bottom = 577.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.172549, 0.305882, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 100
+text = "Best score: 12434"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MainMenuUI"]
+position = Vector2(48, 344)
+scale = Vector2(3, 3)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+frame = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="MainMenuUI"]
+position = Vector2(912, 344)
+scale = Vector2(3, 3)
+texture = ExtResource("8_h4fhv")
+hframes = 15
+frame = 8
+
+[node name="Sprite2D3" type="Sprite2D" parent="MainMenuUI"]
+position = Vector2(296, 288)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("12_107s1")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 156.215
+offset_right = 848.0
+offset_bottom = 431.215
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuUI/MarginContainer"]
+layout_mode = 2
+
+[node name="playbutton" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 91
+text = "play"
+
+[node name="settbutton" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 91
+text = "settings"
+
+[node name="h2pbutton" type="Button" parent="MainMenuUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_pa8pw")
+theme_override_font_sizes/font_size = 91
+text = "how to play"
+
+[connection signal="pressed" from="ENDUI/playagain" to="." method="_on_playagain_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/settbutton" to="." method="_on_settbutton_pressed"]
+[connection signal="pressed" from="MainMenuUI/MarginContainer/VBoxContainer/h2pbutton" to="." method="_on_h_2_pbutton_pressed"]
